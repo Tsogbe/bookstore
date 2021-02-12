@@ -102,9 +102,14 @@ return [
         'default' => [
             'query' => [
                 // 'example_query' => ExampleQuery::class,
+                'book' => App\GraphQL\Queries\BookQuery::class,
+                'books' => App\GraphQL\Queries\BooksQuery::class,
             ],
             'mutation' => [
                 // 'example_mutation'  => ExampleMutation::class,
+                'createBook' => App\GraphQL\Mutations\CreateBookMutation::class,
+                'updateBook' => App\GraphQL\Mutations\UpdateBookMutation::class,
+                'deleteBook' => App\GraphQL\Mutations\DeleteBookMutation::class,
             ],
             'middleware' => [],
             'method' => ['get', 'post'],
@@ -124,6 +129,7 @@ return [
         // 'example'           => ExampleType::class,
         // 'relation_example'  => ExampleRelationType::class,
         // \Rebing\GraphQL\Support\UploadType::class,
+        'Book' => App\GraphQL\Types\BookType::class,
     ],
 
     // The types will be loaded on demand. Default is to load all types on each request
